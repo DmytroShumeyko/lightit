@@ -82,7 +82,7 @@ class Comments
         $result->bindParam(':parent_id', $parent_id, PDO::PARAM_INT);
 
         // Указываем, что хотим получить данные в виде массива
-             $result->setFetchMode(PDO::FETCH_ASSOC);
+        $result->setFetchMode(PDO::FETCH_ASSOC);
 
         // Выполнение коменды
         $result->execute();

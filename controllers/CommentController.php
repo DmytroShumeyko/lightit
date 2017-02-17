@@ -29,10 +29,8 @@ class CommentController
      */
     public function actionDelete($id){
 
-
         Comments::deleteRec($id);
 
-     //   Comments::deleteComment($id);
         header("Location: /");
     }
 
