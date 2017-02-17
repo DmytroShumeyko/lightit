@@ -50,8 +50,13 @@ $(document).ready(function () {
     });
     $( ".slide" ).click(function() {
         var id = $(this).attr("data-slide");
-        $('div[data-slide=' + id + ']').slideToggle( "slow", function() {
-            // Animation complete.
+        $('.slide' + id + '').slideToggle( "slow", function() {
+
+        });
+    });
+    $( ".slideall" ).click(function() {
+        $('.padding').slideToggle( "slow", function() {
+
         });
     });
 });

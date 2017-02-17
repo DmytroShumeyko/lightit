@@ -29,6 +29,7 @@ class CommentController
      */
     public function actionDelete($id){
 
+
         Comments::deleteComment($id);
         header("Location: /");
     }

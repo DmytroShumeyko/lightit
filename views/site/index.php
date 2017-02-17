@@ -31,7 +31,7 @@
                             <div class="input-row" id="smb">
                                 <?php if (User::isGuest()): ?>
                                     <div class="com-sm-6 pull-right">
-                                        <p>Для отправки сообдений необходимо авторизироваться</p>
+                                        <p>Для отправки сообщений необходимо авторизироваться</p>
                                     </div>
                                 <?php else: ?>
                                     <input class="btn btn-primary comment-submit pull-right" type="submit"
@@ -46,6 +46,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-10 col-sm-offset-1">
+                    <a class="slideall" >Cвернуть все <i class="fa fa-angle-down" aria-hidden="true"></i></a>
                     <div style="border: 1px solid orange; margin-top: 30px;">
                         <?php echo $comments; ?>
                     </div>

@@ -22,6 +22,9 @@
                                 data-id="<?php echo $comment['id']; ?>"></i></a>
                     <a href="/delete/<?php echo $comment['id']; ?>" title="Удалить"><i
                                 class="fa fa-times"></i></a>
+                    <?php elseif (isset($_SESSION['user'])): ?>
+                    <a class="addToComment" data-id="<?php echo $comment['id']; ?>"
+                       title="Ответить">Ответить</a>
                 <?php else: ?>
                     <div class="com-sm-6 pull-right">
                         <p><span class="label label-warning">Действия: Только просмотр</span>
@@ -34,8 +37,9 @@
         </div>
     </div>
     <?php if (!empty($comment['children'])): ?>
-        <a class="slide" data-slide="<?php echo $comment['id']; ?>">Cвернуть <i class="fa fa-angle-down" aria-hidden="true"></i></a>
-        <div class="padding" data-slide="<?php echo $comment['id']; ?>">
+        <a class="slide" data-slide="<?php echo $comment['id']; ?>">Cвернуть <i class="fa fa-angle-down"
+                                                                                ></i></a>
+        <div class="padding slide<?php echo $comment['id']; ?>" >
             <?php echo Comments::getCommentsTemplate($comment['children']); ?>
         </div>
     <?php endif; ?>

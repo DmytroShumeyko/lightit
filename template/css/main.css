@@ -9,7 +9,9 @@ body {
     position: relative;
 
 }
-
+textarea{
+    resize: none;
+}
 html, body {
     height: 100%;
     margin: 0;
