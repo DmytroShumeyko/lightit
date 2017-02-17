@@ -1,4 +1,4 @@
-<div>
+<div class="firstmsg">
     <div class="panel panel-default" id="<?php echo($comment['id']) ?>">
         <div class="panel-body">
             <div class="col-sm-12">

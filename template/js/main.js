@@ -50,12 +50,13 @@ $(document).ready(function () {
     });
     $( ".slide" ).click(function() {
         var id = $(this).attr("data-slide");
-        $('.slide' + id + '').slideToggle( "slow", function() {
-
-        });
+        $('.slide' + id + '').slideToggle( "slow");
     });
     $( ".slideall" ).click(function() {
-        $('.padding').slideToggle( "slow", function() {
+        $('.padding').slideToggle( "slow");
+    });
+    $( ".slideallmsg" ).click(function() {
+        $('.firstmsg').slideToggle( "slow", function() {
 
         });
     });

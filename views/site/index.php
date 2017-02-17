@@ -46,8 +46,9 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-10 col-sm-offset-1">
-                    <a class="slideall" >Cвернуть все <i class="fa fa-angle-down" aria-hidden="true"></i></a>
-                    <div style="border: 1px solid orange; margin-top: 30px;">
+                    <a class="slideall" > Cвернуть все комментарии <i class="fa fa-angle-down" aria-hidden="true"></i></a>
+                    <a class="slideallmsg" >&nbsp&nbspCвернуть все сообщения <i class="fa fa-angle-down" aria-hidden="true"></i></a>
+                    <div style="border: 1px solid orange; margin-top: 30px; min-height: 50px;">
                         <?php echo $comments; ?>
                     </div>
                 </div>
