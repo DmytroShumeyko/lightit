@@ -53,7 +53,7 @@ class Comments
     /**
      * Удаляем комментарий
      */
-    public static function deleteComment($id)
+     public static function deleteComment($id)
     {
         // Соединение с БД
         $db = Db::getConnection();
@@ -65,6 +65,46 @@ class Comments
         $result = $db->prepare($sql);
         $result->bindParam(':id', $id, PDO::PARAM_INT);
         return $result->execute();
+    }
+    /**
+     * Родительский ИД элемента для удаления
+     */
+    public static function deleteForChild($parent_id){
+
+        $db = Db::getConnection();
+
+        // Текст запроса к БД
+        $sql = 'SELECT id FROM comments WHERE parent_id = :parent_id';
+
+        // Используется подготовленный запрос
+        $result = $db->prepare($sql);
+
+        $result->bindParam(':parent_id', $parent_id, PDO::PARAM_INT);
+
+        // Указываем, что хотим получить данные в виде массива
+             $result->setFetchMode(PDO::FETCH_ASSOC);
+
+        // Выполнение коменды
+        $result->execute();
+
+        // Получение и возврат результатов
+        return $result->fetch();
+    }
+
+    /**
+     * Рекурсивное удаление
+     */
+    public static function deleteRec($id_children)
+    {
+
+        $id_parent = $id_children;
+        if ($id_parent != NULL) {
+            $stat = self::deleteForChild($id_parent);
+            $id_children = $stat['id'];
+            self::deleteComment($id_parent);
+            self::deleteRec($id_children);
+        }
+        return true;
     }
 
     /**
