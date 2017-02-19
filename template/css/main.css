@@ -79,6 +79,10 @@ a#scrollUp i{
 .slide{
     padding-left: 30px;
 }
+
+.bgclass{
+    background-color: whitesmoke;
+}
 /*************************
 *******Header CSS******
 **************************/

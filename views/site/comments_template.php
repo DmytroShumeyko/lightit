@@ -1,5 +1,5 @@
 <div class="firstmsg">
-    <div class="panel panel-default" id="<?php echo($comment['id']) ?>">
+    <div class="panel panel-default bgclass" id="<?php echo($comment['id']) ?>">
         <div class="panel-body">
             <div class="col-sm-12">
                 <div class="com-sm-6" style="float:left">

@@ -88,21 +88,26 @@ class Comments
         $result->execute();
 
         // Получение и возврат результатов
-        return $result->fetch();
+        $i = 0;
+        $comids = array();
+        while ($row = $result->fetch()) {
+            $comids[$i]['id'] = $row['id'];
+            $i++;
+        }
+        return $comids;
     }
 
     /**
      * Рекурсивное удаление
      */
-    public static function deleteRec($id_children)
+    public static function deleteRec($id_msg)
     {
-
-        $id_parent = $id_children;
-        if ($id_parent != NULL) {
-            $stat = self::deleteForChild($id_parent);
-            $id_children = $stat['id'];
-            self::deleteComment($id_parent);
-            self::deleteRec($id_children);
+        self::deleteComment($id_msg);
+        $stat = self::deleteForChild($id_msg);
+        if ($stat != NULL){
+            foreach ($stat as $item){
+                self::deleteRec($item['id']);
+            }
         }
         return true;
     }
