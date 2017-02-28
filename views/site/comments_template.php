@@ -3,14 +3,14 @@
         <div class="panel-body">
             <div class="col-sm-12">
                 <div class="com-sm-6" style="float:left">
-                    Автор: <?php echo($comment['name']) ?>
+                    Автор: <?php echo(htmlspecialchars($comment['name'])) ?>
                 </div>
                 <div class="com-sm-6 pull-right">
                     Дата добавления: <?php echo($comment['created']) ?>
                 </div>
             </div>
             <div class="col-sm-12 msg">
-                Сообщение: <?php echo($comment['message']) ?>
+                Сообщение: <?php echo(htmlspecialchars($comment['message'])) ?>
             </div>
 
             <div class="com-sm-6 pull-right">
