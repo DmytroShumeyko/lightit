@@ -14,7 +14,7 @@ class AjaxController
 
             $id = $_POST['id'];
             $data = Comments::getCommentForUpdate($id);
-            echo($data['message']);
+            echo(htmlspecialchars($data['message']));
 
         }
         return true;
